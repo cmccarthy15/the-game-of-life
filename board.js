@@ -55,7 +55,7 @@ Board.prototype.get = function (coords) {
  * Set the value of the board at coords to value.
  */
 Board.prototype.set = function(coords, value) {
-  // TODO
+  this.cells[this.indexFor(coords)] = value;
 }
 
 /**
@@ -64,7 +64,16 @@ Board.prototype.set = function(coords, value) {
  * Return the count of living neighbors around a given coordinate.
  */
 Board.prototype.livingNeighbors = function([row, col]) {
-  // TODO: Return the count of living neighbors.
+  let alive = 0;
+  for (let i = row -1; i <= row + 1; i++){ //rows
+    for (var j = col - 1; j <= col + 1; j++){
+      if (this.get([i,j])) alive++;
+    }
+  }
+  if(this.get([row,col])){
+    alive--;
+  }
+  return alive;
 }
 
 /**
@@ -73,7 +82,7 @@ Board.prototype.livingNeighbors = function([row, col]) {
  * Toggle the cell at coords from alive to dead or vice versa.
  */
 Board.prototype.toggle = function(coords) {
-  // TODO
+  this.set(coords, !this.get(coords));
 }
 
 /**
