@@ -145,14 +145,12 @@ function Life(container, width=12, height=12) {
 
   function togglePlaying() {
     // TODO: If we're playing, stop. Otherwise, start playing.
-    console.log(game.playing);
-    if (game.playing){
-      console.log('should be stopped now...');
-      game.stop();
-    } else {
-      game.play();
-      console.log('play play play');
-    }
+    game.playing ? game.stop() : game.play();
+    // if (game.playing){
+    //   game.stop();
+    // } else {
+    //   game.play();
+    // }
   }
 
   function clear() {
