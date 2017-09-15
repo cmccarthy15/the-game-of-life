@@ -13,7 +13,7 @@ if (mainElement) {
 
 
   document.getElementById('reset_btn')
-    .addEventListener('click', game.reset);
+    .addEventListener('click', game.random);
 
     document.getElementById('clear_btn')
     .addEventListener('click', game.clear);
