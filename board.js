@@ -18,7 +18,8 @@ Board.prototype.indexFor = function([row, col]) {
 
 Board.prototype.coordsFor = function(index){
   var col = index % this.width;
-  var row = (index - col) / this.width;
+  var row = Math.floor(index / this.width);
+    //or (index - col) / this.width
   return [row, col];
 };
 
@@ -40,6 +41,7 @@ Board.prototype.livingNeighbors = function([row, col]) {
   // if (this.get([row, col])){
   //   alive--;
   // }
+  //return alive;
 
   return this.get([row - 1, col - 1]) +
          this.get([row - 1, col]) +
