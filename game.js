@@ -6,7 +6,7 @@ if (mainElement) {
   game.playing = false;
   game.intervalId;
   document.getElementById('step_btn')
-    .addEventListener('click', game.step);
+    .addEventListener('click', ()=> game.step());
 
   document.getElementById('play_btn')
     .addEventListener('click', game.togglePlaying);
