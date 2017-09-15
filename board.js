@@ -50,8 +50,6 @@ Board.prototype.livingNeighbors = function([row, col]) {
          this.get([row + 1, col]) +
         this.get([row + 1, col + 1]);
 
-
-
   //return alive;
 };
 
