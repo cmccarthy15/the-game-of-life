@@ -1,6 +1,6 @@
 var mainElement = document.getElementById('main')
 if (mainElement) {
-  var game = Life(mainElement);
+  var game = Life(mainElement,25,25);
 
   // Connect #step_btn to the step function
   game.playing = false;
@@ -101,7 +101,7 @@ function Life(container, width=12, height=12) {
   function play() {
     // Start playing by running the `step` function
     // automatically repeatedly every fixed time interval
-    game.intervalId = setInterval(game.step, 500);
+    game.intervalId = setInterval(game.step, 100);
     game.playing = true;
 
     // HINT:
