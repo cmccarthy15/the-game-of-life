@@ -18,7 +18,8 @@ Board.prototype.indexFor = function([row, col]) {
 
 Board.prototype.coordsFor = function(index){
   var col = index % this.width;
-  var row = (index - col) / this.width;
+  var row = Math.floor(index / this.width);
+    //or (index - col) / this.width
   return [row, col];
 };
 
