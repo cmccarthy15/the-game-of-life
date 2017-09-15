@@ -131,3 +131,5 @@ function tick(present, future, rules=conway) {
   }
   return [future, present];
 }
+
+
