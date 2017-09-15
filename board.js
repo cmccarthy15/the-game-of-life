@@ -65,11 +65,14 @@ Board.prototype.toggle = function(coords) {
  * @param {Number} numLivingNeighbors
  */
 function conway(isAlive, numLivingNeighbors) {
-  if (!isAlive && numLivingNeighbors === 3){
-    return true;
-  } else if (isAlive && 1 < numLivingNeighbors &&  numLivingNeighbors < 4){
-    return true;
-  } else { return false; }
+  return isAlive ? numLivingNeighbors === 2 || numLivingNeighbors === 3
+                  : numLivingNeighbors === 3;
+
+  // if (!isAlive && numLivingNeighbors === 3){
+  //   return true;
+  // } else if (isAlive && 1 < numLivingNeighbors &&  numLivingNeighbors < 4){
+  //   return true;
+  // } else { return false; }
 }
 
 /**
