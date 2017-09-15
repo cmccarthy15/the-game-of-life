@@ -40,6 +40,7 @@ Board.prototype.livingNeighbors = function([row, col]) {
   // if (this.get([row, col])){
   //   alive--;
   // }
+  //return alive;
 
   return this.get([row - 1, col - 1]) +
          this.get([row - 1, col]) +
@@ -48,11 +49,7 @@ Board.prototype.livingNeighbors = function([row, col]) {
          this.get([row, col + 1]) +
          this.get([row + 1, col - 1]) +
          this.get([row + 1, col]) +
-        this.get([row + 1, col + 1]);
-
-
-
-  //return alive;
+         this.get([row + 1, col + 1]);
 };
 
 Board.prototype.toggle = function(coords) {
